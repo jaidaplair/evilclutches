@@ -8,6 +8,8 @@ public class BossMoving : MonoBehaviour
     [SerializeField] float speed = 0.005f;
     [SerializeField] float minY = -4f;
     [SerializeField] float maxY = 4f;
+    //made reference prefab of the baby dragon
+    [SerializeField] GameObject babyPrefab;
     //the boolean travelDirection is true when we are going up and false when we are going down.
     bool travelDirection = true;
     // Start is called before the first frame update
@@ -36,6 +38,12 @@ public class BossMoving : MonoBehaviour
         if(transform.position.y < minY ) 
         { 
             travelDirection = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //make a new baby everytime space is pushed
+            Instantiate(babyPrefab);
         }
     }
 }
