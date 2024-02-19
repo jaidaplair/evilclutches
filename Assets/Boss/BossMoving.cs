@@ -42,8 +42,15 @@ public class BossMoving : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //make a new baby everytime space is pushed
-            Instantiate(babyPrefab);
+            //function to make a new baby everytime space is pushed, returns a reference to the pbject that was created
+            Instantiate(babyPrefab, transform.position, transform.rotation);
+            /*
+             //make a new baby everytime space is pushed, returns a reference to the pbject that was created
+            GameObject obj;
+            obj= Instantiate(babyPrefab);
+            //Vector3.zero is equivalent to new Vector3(0,0,0)
+            //spews babys out of the boss
+            obj.transform.position = transform.position;*/
         }
     }
 }
