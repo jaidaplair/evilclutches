@@ -9,10 +9,13 @@ public class MomMoving : MonoBehaviour
     [SerializeField] float minY = -4f;
     [SerializeField] float maxY = 4f;
     [SerializeField] float y = 0.0005f;
+    [SerializeField] GameObject fireballPrefab;
     bool travelDirection = true;
+    
     // Start is called before the first frame update
     void Start()
     {
+
         
     }
 
@@ -35,7 +38,25 @@ public class MomMoving : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, minY, 0f);
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            float newY = transform.position.y + 0.59f;
+
+            //Fire();
+
+            Instantiate(fireballPrefab, new Vector3(transform.position.x,newY,transform.position.z), transform.rotation);
+            //Fire();
+        }
+        /*void Fire()
+        {
+            // Play firing sound
+            if (firingSound != null)
+            {
+                audioSource.PlayOneShot(firingSound);
+
+            }
+        }*/
         //Debug.Log(y);
         /*  if (travelDirection == true)
           {//we are moving up

@@ -5,11 +5,14 @@ using UnityEngine;
 public class BossMoving : MonoBehaviour
 {
     //speed of the demon moving 
-    [SerializeField] float speed = 0.005f;
+    [SerializeField] float speed = 5f;
     [SerializeField] float minY = -4f;
     [SerializeField] float maxY = 4f;
     //made reference prefab of the baby dragon
     [SerializeField] GameObject babyPrefab;
+    [SerializeField] GameObject demonPrefab;
+    [SerializeField] int Demon2BabyRatio = 50;
+
     //the boolean travelDirection is true when we are going up and false when we are going down.
     bool travelDirection = true;
     // Start is called before the first frame update
@@ -23,11 +26,11 @@ public class BossMoving : MonoBehaviour
     {
         if (travelDirection == true )
         {//we are moving up
-            transform.Translate(speed * Vector3.up);
+            transform.Translate(Time.deltaTime * speed * Vector3.up);
         }
         else
         {//we are moving down
-            transform.Translate(speed * Vector3.down);
+            transform.Translate(Time.deltaTime * speed * Vector3.down);
         }
         //if we hit the top change direction
         if(transform.position.y > maxY)
@@ -42,8 +45,18 @@ public class BossMoving : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            int r = Random.Range(0, 100);
+            if (r < Demon2BabyRatio)
+            {
+                Instantiate(demonPrefab, transform.position ,transform.rotation);
+            }
+            else
+            {
+                //function to make a new baby everytime space is pushed, returns a reference to the pbject that was created
+                Instantiate(babyPrefab, transform.position, transform.rotation);
+            }
             //function to make a new baby everytime space is pushed, returns a reference to the pbject that was created
-            Instantiate(babyPrefab, transform.position, transform.rotation);
+            //Instantiate(babyPrefab, transform.position, transform.rotation);
             /*
              //make a new baby everytime space is pushed, returns a reference to the pbject that was created
             GameObject obj;
