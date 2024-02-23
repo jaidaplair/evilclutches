@@ -6,6 +6,8 @@ using UnityEngine;
 public class BabyMovement : MonoBehaviour
 {
     [SerializeField] float speed = 4f;
+    [SerializeField] AudioClip scream;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +20,10 @@ public class BabyMovement : MonoBehaviour
     {
         //move left across the screen
         transform.Translate(Time.deltaTime * speed * Vector3.left);
+
+    }
+    private void OnDestroy()
+    {
+        audioSource.PlayOneShot(scream);
     }
 }

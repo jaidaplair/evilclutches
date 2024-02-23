@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3165825451855402090}
   - component: {fileID: 124163210619443578}
   - component: {fileID: -9140961841420220971}
+  - component: {fileID: 2792474198958051322}
   m_Layer: 0
   m_Name: baby
   m_TagString: Untagged
@@ -120,3 +121,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  scream: {fileID: 8300000, guid: be2c7e12402a7f144b5810b2ab265b9e, type: 3}
+--- !u!58 &2792474198958051322
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6513766454317602211}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0146817565, y: -0.011419207}
+  serializedVersion: 2
+  m_Radius: 0.30110115

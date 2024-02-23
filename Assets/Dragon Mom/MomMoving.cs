@@ -42,10 +42,11 @@ public class MomMoving : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             float newY = transform.position.y + 0.59f;
+            float newX = transform.position.x + 0.5f;
 
             //Fire();
 
-            Instantiate(fireballPrefab, new Vector3(transform.position.x,newY,transform.position.z), transform.rotation);
+            Instantiate(fireballPrefab, new Vector3(newX,newY,transform.position.z), transform.rotation);
             //Fire();
         }
         /*void Fire()

@@ -21,4 +21,11 @@ public class Fireball : MonoBehaviour
         //move left across the screen
         transform.Translate(Time.deltaTime * speed * Vector3.right);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(collision.gameObject);//destroy object we hit
+        Destroy(gameObject);//destroy the fireball
+        //Debug.Log("Ive been triggered!!!!!!!!!"+ collision.name);
+    }
 }

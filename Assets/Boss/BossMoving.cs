@@ -12,6 +12,9 @@ public class BossMoving : MonoBehaviour
     [SerializeField] GameObject babyPrefab;
     [SerializeField] GameObject demonPrefab;
     [SerializeField] int Demon2BabyRatio = 50;
+    float futureTime = 0f; //this is the time when we will istantiate a baby or demon
+    [SerializeField] float minRange = 1f;
+    [SerializeField] float maxRange =3f;
 
     //the boolean travelDirection is true when we are going up and false when we are going down.
     bool travelDirection = true;
@@ -43,8 +46,10 @@ public class BossMoving : MonoBehaviour
             travelDirection = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Time.time > futureTime)//
+        //if (Input.GetKeyDown(KeyCode.Space))
         {
+            futureTime = Time.time + Random.Range(minRange, maxRange);
             int r = Random.Range(0, 100);
             if (r < Demon2BabyRatio)
             {
@@ -64,6 +69,7 @@ public class BossMoving : MonoBehaviour
             //Vector3.zero is equivalent to new Vector3(0,0,0)
             //spews babys out of the boss
             obj.transform.position = transform.position;*/
+
         }
     }
 }
