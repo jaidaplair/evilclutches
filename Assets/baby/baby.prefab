@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2792474198958051322}
   m_Layer: 0
   m_Name: baby
-  m_TagString: Untagged
+  m_TagString: baby
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  scream: {fileID: 8300000, guid: be2c7e12402a7f144b5810b2ab265b9e, type: 3}
 --- !u!58 &2792474198958051322
 CircleCollider2D:
   m_ObjectHideFlags: 0
