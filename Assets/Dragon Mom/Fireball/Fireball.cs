@@ -31,12 +31,12 @@ public class Fireball : MonoBehaviour
         if (collision.CompareTag("demon") == true)
         {   //increment score
             gm.score += 10;
-            //play demon sound 
+            
         }
         if (collision.CompareTag("baby") == true)
         {   //decrement score
             gm.score -= 15;
-            //play baby sound 
+             
         }
 
 
